@@ -24,7 +24,7 @@ async def handle_packet(reader, writer):
         await writer.wait_closed()
 
 async def main():
-    host = "127.0.0.1"
+    host = "10.1.1.2"
     port = 8889
 
     print(f"Serveur en cours de démarrage sur {host}:{port}...")

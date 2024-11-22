@@ -1,7 +1,7 @@
 import socket
 
 def main():
-    host = "127.0.0.1"
+    host = "10.1.1.2"
     port = 8889
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
