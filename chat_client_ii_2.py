@@ -4,7 +4,10 @@ def main():
     host = "127.0.0.1"
     port = 8889
 
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
     try:
+        s.connect((host,port))
         with socket.create_connection((host, port)) as sock:
             print(f"Connecté au serveur {host}:{port}")
 
