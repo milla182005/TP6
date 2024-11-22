@@ -25,7 +25,7 @@ async def handle_packet(reader, writer):
 
 async def main():
     host = "127.0.0.1"
-    port = 8888
+    port = 8889
 
     print(f"Serveur en cours de démarrage sur {host}:{port}...")
 

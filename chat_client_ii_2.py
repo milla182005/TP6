@@ -2,7 +2,7 @@ import socket
 
 def main():
     host = "127.0.0.1"
-    port = 8888
+    port = 8889
 
     try:
         with socket.create_connection((host, port)) as sock:
