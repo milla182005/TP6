@@ -1,24 +1,30 @@
 import socket
 
 def main():
-    host = "10.1.1.2"
-    port = 8889
-
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    host = "10.1.1.2"  
+    port = 8889        
 
     try:
-        s.connect((host,port))
-        with socket.create_connection((host, port)) as sock:
-            print(f"Connecté au serveur {host}:{port}")
+       
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-            message = "Hello"
-            sock.sendall(message.encode())
-            print(f"Message envoyé au serveur : {message}")
+        s.connect((host, port))
+        print(f"Connecté au serveur {host}:{port}")
 
-            response = sock.recv(1024)
-            print(f"Réponse reçue du serveur : {response.decode()}")
+        message = "Hello"
+        s.sendall(message.encode())
+        print(f"Message envoyé au serveur : {message}")
+
+        response = s.recv(1024)  
+        print(f"Réponse reçue du serveur : {response.decode()}")
 
     except ConnectionRefusedError:
         print("Impossible de se connecter au serveur. Assurez-vous qu'il est démarré.")
     except Exception as e:
         print(f"Une erreur s'est produite : {e}")
+    finally:
+        
+        s.close()
+
+if __name__ == "__main__":
+    main()
