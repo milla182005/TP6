@@ -1,5 +1,5 @@
 import asyncio
-import aioconsole
+from aioconsole import ainput
 
 async def handle_user_input(writer):
     while True:
